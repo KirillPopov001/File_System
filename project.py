@@ -13,7 +13,16 @@ def acceptCommand():  # vova
 
 
 def moveUp():  # Киррил
-    pass
+    b = os.getcwd()
+    b = b[::-1]
+    for i in b:
+        if i == "\\":
+            b = b[1:len(b) + 1]
+            break
+        b = b[1:len(b) + 1]
+    b = b[::-1]
+    os.chdir(b)
+    return local.currdir + os.getcwd()
 
 
 def runCommand(command):  # Vova
